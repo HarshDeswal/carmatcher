@@ -2,15 +2,91 @@
 
 A Next.js app that helps users decide which car to buy based on their preferences. Answer a short questionnaire and get personalized recommendations from 60+ realistic Indian cars.
 
+## What did you build and why?
+
+I built **AI Car Matchmaker**, a full-stack web application that helps a confused car buyer narrow down their options into a confident shortlist.
+
+Instead of exposing users to a long list of cars and filters, the application asks a short questionnaire covering budget, fuel preference, transmission, body type, family size, primary usage, and buying priority. Based on these inputs, the backend computes a weighted recommendation score across a curated dataset of Indian cars and returns the three best matches with an explanation and comparison table.
+
+The goal was to optimize for the core user journey:
+**"I don't know what to buy" → "Here are the three cars that best match my needs."**
+
+### What I deliberately cut
+
+Given the 2–3 hour time constraint, I intentionally kept the scope focused and omitted:
+
+- User authentication and profiles
+- Live automotive APIs or constantly updated datasets
+- Advanced filtering and sorting
+- AI-generated natural language explanations (used deterministic explanations instead)
+- Wishlist, favorites, and notifications
+- Rich analytics and dashboards
+
+I prioritized delivering a complete end-to-end recommendation flow over implementing many partially finished features.
+
 ## Tech Stack
 
-- **Next.js 15** (App Router)
-- **TypeScript**
-- **TailwindCSS**
-- **Prisma** + **Neon PostgreSQL**
-- Server Actions & API Routes
-- No authentication
-- Deployable to Vercel
+- **Next.js 15 (App Router)** — Unified frontend and backend in a single framework with Server Actions, reducing boilerplate and enabling faster iteration.
+- **TypeScript** — Improved type safety and maintainability with minimal overhead.
+- **Tailwind CSS** — Rapid UI development without writing custom CSS.
+- **Prisma ORM** — Simple database access with a strongly typed client.
+- **SQLite** — Lightweight database suitable for rapid prototyping within the assignment time limit.
+- **Server Actions** — Simplified communication between frontend and backend without creating unnecessary REST endpoints.
+
+The overall stack was selected to maximize development speed while maintaining a clean architecture and readable codebase.
+
+## AI Usage
+
+I intentionally used AI as an implementation accelerator rather than as an autopilot.
+
+### Delegated to AI
+
+- Initial project scaffolding
+- Component boilerplate
+- Form generation
+- Prisma model scaffolding
+- Tailwind UI generation
+- Basic CRUD operations
+- Initial README draft
+- Seed data generation for the car dataset
+
+### Implemented / Reviewed Manually
+
+- Product scope and feature prioritization
+- Recommendation scoring logic
+- Overall application architecture
+- Code review and refinement of generated code
+- Integration between frontend, backend, and recommendation engine
+- Debugging runtime and deployment issues
+- Final testing and validation
+
+### Where AI helped most
+
+AI significantly reduced the time spent writing repetitive boilerplate, allowing me to focus on product decisions and integration instead of routine implementation.
+
+## Where AI got in the way
+
+The biggest challenge was deployment.
+
+The generated project used Prisma with SQLite, which worked well for local development but required additional changes for deployment on serverless platforms because local SQLite files are not suitable for production environments like Vercel.
+
+AI generated a solid starting point but still required manual verification, debugging, and engineering judgment during integration and deployment.
+
+This reinforced that while AI is excellent for accelerating implementation, deployment decisions, infrastructure choices, and final validation still require human oversight.
+
+## If I had another 4 hours
+
+I would focus on improving the product rather than adding unrelated features.
+
+Planned improvements include:
+
+- Migrate to a production-ready hosted database (Neon PostgreSQL or Turso).
+- Integrate an LLM to generate personalized recommendation explanations instead of template-based reasoning.
+- Add richer comparison visualizations (ownership cost, maintenance, resale value, fuel cost estimates).
+- Introduce advanced recommendation filters and confidence scoring.
+- Improve mobile responsiveness and accessibility.
+- Add unit tests for the recommendation engine and end-to-end testing for the questionnaire flow.
+- Support dynamic datasets from external automotive APIs instead of a static JSON dataset.
 
 ## Features
 
