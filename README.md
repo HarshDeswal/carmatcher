@@ -1,3 +1,8 @@
+<img width="1891" height="857" alt="image" src="https://github.com/user-attachments/assets/dcce1c42-61a6-4109-b319-10750c0f5cff" />
+
+
+https://carmatcher.vercel.app/
+
 # AI Car Matchmaker
 
 A Next.js app that helps users decide which car to buy based on their preferences. Answer a short questionnaire and get personalized recommendations from 60+ realistic Indian cars.
