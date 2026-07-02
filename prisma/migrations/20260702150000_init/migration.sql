@@ -1,11 +1,11 @@
 -- CreateTable
 CREATE TABLE "Car" (
-    "id" TEXT NOT NULL PRIMARY KEY,
+    "id" TEXT NOT NULL,
     "brand" TEXT NOT NULL,
     "model" TEXT NOT NULL,
     "variant" TEXT NOT NULL,
     "price" INTEGER NOT NULL,
-    "mileage" REAL NOT NULL,
+    "mileage" DOUBLE PRECISION NOT NULL,
     "fuelType" TEXT NOT NULL,
     "transmission" TEXT NOT NULL,
     "bodyType" TEXT NOT NULL,
@@ -16,12 +16,14 @@ CREATE TABLE "Car" (
     "imageUrl" TEXT NOT NULL,
     "pros" TEXT NOT NULL,
     "cons" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "Car_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "SearchHistory" (
-    "id" TEXT NOT NULL PRIMARY KEY,
+    "id" TEXT NOT NULL,
     "budget" INTEGER NOT NULL,
     "fuelType" TEXT NOT NULL,
     "transmission" TEXT NOT NULL,
@@ -30,5 +32,7 @@ CREATE TABLE "SearchHistory" (
     "primaryUsage" TEXT NOT NULL,
     "priority" TEXT NOT NULL,
     "results" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "SearchHistory_pkey" PRIMARY KEY ("id")
 );
